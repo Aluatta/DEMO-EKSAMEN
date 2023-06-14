@@ -35,11 +35,12 @@
         width: 40rem;
         height:30rem;
         font-family: outfit;
-        background-color: var(--color-background-light);
-    font-size: var(--font-body);
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+        background-color:#f7f5f1 ;
+        font-size: var(--font-body);
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        color:#212121;
 
    }
 
@@ -60,7 +61,8 @@
         display: flex;
         justify-content: flex-end;
         padding: 1rem 1.5rem;
-        background-color: var(--color-background-dark);
+        /**background-color: var(--color-background-dark)*/;
+        background-color:#363636 ;
         height: 60px;
         margin-bottom: var(--space-medium);
 
@@ -307,14 +309,6 @@ background-color: var(--color-warning-reset);
 }
 
 
-.circle{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 1px solid var(--color-background-dark);
-}
-
-
 .button--afslut{
     background-color:var(--color-start-ok);
     color:var(--color-very-light);
@@ -434,22 +428,27 @@ flex-grow: 1;
 /**  demo-alerts - - - - -- - - - - -  */
 
 .circle {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background-color:gainsboro;
-   border: 1px solid var(--color-font);
+    border: 1px solid var(--color-font);
+    margin: 0 auto;
+
+ 
 
 
 }
-/*  demo-alert colors */
-.main-alert{
-    display: grid;
-    grid-template-columns:  80px auto;
-    padding: 0 20px;
-   
-    
+/*  demo-alert colors {*/
+.headline--alert-tekst{
+    margin-bottom: 1.5rem;
+    font-size: var(--font-drift-alert);
 }
+.alert-place{
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
 .alarmColor{
     background-color:var(--color-stop-alarm);
 }
@@ -457,16 +456,38 @@ flex-grow: 1;
 .warningColor{
     background-color:var(--color-warning-reset);
 }
+
+
 .main-alert{
+    display: grid;
+    grid-template-columns:  120px auto;
     flex-grow: 1;
     justify-content: center;
+  
 }
+ 
+
 .demo-footer{
 display: flex;
 flex-direction: column;
 align-items: end;
 margin-bottom: 3rem;
-
+padding-right: var(--space-default)
 }
 
 
+/**- - - - - - - - */
+
+.error-message {
+    color: var(--color-stop-alarm);
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .reload-button {
+    background-color:var(--color-start-ok);
+    color:var(--color-very-light);
+    padding: 10px 20px;
+    border: solid 1px var(--color-font);
+    border-radius: 6px;
+  }
