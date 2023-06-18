@@ -57,27 +57,44 @@ fetch("errorcode.json")
     warningCircle.classList.add("alarmColor")
   }
  } 
-
-
  )
+
+
 /** handles any errors that occurred during the fetch operation and logs them to the console. */
   .catch(error => {
     console.error("Could not fetch JSON:", error);
-    const errorMessage = document.createElement("p"); /** */
+
+    const errorMessage = document.createElement("p"); 
+    errorMessage.setAttribute("class","error-message" );
     errorMessage.textContent = "Der opstod en fejl under indlæsningen af data. Vær venlig at genindlæse siden og prøv igen.";
-    document.body.appendChild(errorMessage);
+    errorMessage.style.color="red"
+    console.log(errorMessage)
   
     const reloadButton = document.createElement("button"); /** variable that creates button  element  in html , for at reload the page */
+    reloadButton.setAttribute("class", "reloadSide");
     reloadButton.textContent = "Genindlæs siden";          /**  create text on this button */
     /** added eventListener, that triggers an action  of reloading the  page  and  getting  all  page with code again :*/
-    reloadButton.addEventListener("click", () => {
-      location.reload(); 
+   
+    const container = document.querySelector('.error-state');
+    container.appendChild(errorMessage);
+    container.appendChild(reloadButton);
+    container.style.background= "#e51f1f38"
+
+
+    reloadButton.addEventListener("click", () => {   /**addListener  event to button to  trigger action: reload page */
+      window.location.reload(); 
     });
-    document.body.appendChild(reloadButton);      /** adds this button to html */
+
+    const infoField = document.querySelector('.main-alert');  /**remove main section from html document flow */
+    infoField.style.display = "none";
+
+    const buttonAfslut = document.querySelector('.button--afslut');  /** hide butto´s vivibility in html document */
+    buttonAfslut.style.visibility ="hidden";
+
+  
   });
   
 
 
   
 
-    
